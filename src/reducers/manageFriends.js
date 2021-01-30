@@ -4,11 +4,14 @@ export function manageFriends(state = { friends: [] }, action) {
       return (
         {
           ...state,
-          friends: [...state.friends, action.friend]
+          friends: [
+            ...state.friends, 
+            action.friend
+          ]
         }
       )
     case "REMOVE_FRIEND":
-      let index = state.friends.find(friend => friend.id === action.id);
+      let index = state.friends.findIndex(friend => friend.id === action.id);
       return (
         {
           ...state, 
