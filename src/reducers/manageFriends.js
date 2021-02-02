@@ -10,8 +10,8 @@ export function manageFriends(state, action){
             const index = state.friends.findIndex(friend => friend.id === action.id)
             return (
                 {friends: [
-                    ...state.friends.slice(0, index),
-                    ...state.friends.slice(index + 1)
+                    state.friends.slice(0, index),
+                    state.friends.slice(index + 1)
                 ]}
             )
         default:
