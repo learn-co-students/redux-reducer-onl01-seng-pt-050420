@@ -2,11 +2,14 @@ export function manageFriends(state, action){
 
     switch (action.type) {
         case 'ADD_FRIEND':
-            let newFriend = Object.assign({}, state)
-            newFriend.friends.push(action.friend)
-            return newFriend           
-        case 
-        "REMOVE_FRIEND":
+            return (
+                {...state,
+                    friends: [
+                      ...state.friends,
+                      action.friend
+                    ]
+                })      
+        case "REMOVE_FRIEND":
         let oldFriend = Object.assign({}, state)
         oldFriend.friends.map((friend, index)=>{
             if (friend.id === action.id){
