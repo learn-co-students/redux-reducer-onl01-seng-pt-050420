@@ -12,15 +12,15 @@ export function manageFriends(state, action){
         case "REMOVE_FRIEND":
         let oldFriend = Object.assign({}, state)
         oldFriend.friends.map((friend, index)=>{
-            if (friend.id === action.id){
-                oldFriend = {
-                    ...state,
-                    friends: [
-                        ...state.friends.slice(0, index),
-                        ...state.friends.slice(index + 1)
-                    ]
-                }
-            }
+            // if (friend.id === action.id){
+            //     oldFriend = {
+            //         ...state,
+            //         friends: [
+            //             ...state.friends.slice(0, index),
+            //             ...state.friends.slice(index + 1)
+            //         ]
+            //     }
+            // }
         })
         return oldFriend
         default:
